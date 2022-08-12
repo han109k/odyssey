@@ -37,9 +37,12 @@ const resolvers = {
     modules: ({ id }, _, { dataSources }) => {
       return dataSources.trackAPI.getTrackModules(id);
     },
+    // REST API does not return durationInSeconds, we will map the length field to this field instead
+    // length value is coming from parent resolver
     durationInSeconds: ({ length }) => length,
   },
   Module: {
+    // REST API does not return durationInSeconds, we will map the length field to this field instead
     durationInSeconds: ({ length }) => length,
   },
 };
