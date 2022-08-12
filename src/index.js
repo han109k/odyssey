@@ -23,3 +23,5 @@ async function startApolloServer(typeDefs, resolvers) {
       📭  Query at ${url}
     `);
 }
+
+startApolloServer(typeDefs, resolvers);
