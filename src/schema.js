@@ -33,6 +33,8 @@ const typeDefs = gql`
     thumbnail: String
     "The track's approximate length to complete, in minutes"
     length: Int
+    "The track's full duration, in seconds"
+    durationInSeconds: Int
     "The number of modules this track contains"
     modulesCount: Int
     "The track's description"
@@ -56,8 +58,10 @@ const typeDefs = gql`
     id: ID!
     "The Module's title"
     title: String!
-    "The Module's length in minutes"
-    length: Int
+    "The Module's length in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds instead")
+    "The Module's full duration, in seconds"
+    durationInSeconds: Int
   }
 `;
 
